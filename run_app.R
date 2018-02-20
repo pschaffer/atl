@@ -4,6 +4,8 @@ if(!require(shiny)){
 
 library(R.utils) #for gzip
 
+ship.to.db.path <- 'send_to_db.R'
+
 ui <- fluidPage(
    fileInput(inputId = "fileToLoad", label = "Upload file!"),
    textOutput("out.string")
@@ -48,7 +50,7 @@ run.page <- function(input,output){
     #gzip file for upload speed
     gzip(inFile$datapath, 'loadme.txt.gz',remove = FALSE,overwrite = TRUE)
     #ship to db
-    source(send_to_db.R)
+    source(ship.to.db.path)
     }
   
   #send success or failure message to UI
