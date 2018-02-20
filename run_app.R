@@ -2,6 +2,8 @@ if(!require(shiny)){
   stop("Please run install.packages('shiny')!")
 }
 
+library(R.utils) #for gzip
+
 ui <- fluidPage(
    fileInput(inputId = "fileToLoad", label = "Upload file!"),
    textOutput("out.string")

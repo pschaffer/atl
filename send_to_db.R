@@ -1,6 +1,5 @@
 library(yaml) 
 library(RJDBC)
-library(R.utils) #for gzip
 
 #keep username/password etc out of the code itself
 pcreds <- yaml.load_file('postgres_creds.yaml')
