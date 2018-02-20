@@ -43,7 +43,10 @@ run.page <- function(input,output){
     }
   
   if(success){
-    
+    #gzip file for upload speed
+    gzip(inFile$datapath, 'loadme.txt.gz',remove = FALSE,overwrite = TRUE)
+    #ship to db
+    source(send_to_db.R)
     }
   
   #send success or failure message to UI
